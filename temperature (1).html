@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>
+        Temperature Converter
+    </title>
+</head>
+
+<body>
+    <h2>Converter of Temperature Units</h2>
+    <input type="number" placeholder="Enter the Celsius Value" id="celcius">
+    <input type="button" name = Submit onclick="c2f()" value="Convert">
+    <input type="number" placeholder="Fahrenheit is..." id="fahrenheit" disabled><br><br>
+
+    <input type="number" placeholder="Enter Celcius value" id="cel2kel">
+    <input type="button" name="submit" onclick="c2k()" value="Convert">
+    <input type="number" placeholder="Kelvin is..." id="kelvin" disabled><br><br>
+
+    <input type="number" placeholder="Enter the Fahrenheit value" id="far2cel">
+    <input type="button" name=submit onclick="f2c()" value="Convert">
+    <input type="number" placeholder="Celcius is..." id="cel2" disabled><br><br>
+
+    <input type="number" placeholder="Enter the Fahrenheit value" id="far2kel">
+    <input type="button" name=submit onclick="f2k()" value="Convert">
+    <input type="number" placeholder="Kelvin is..." id="kel1" disabled>
+</body>
+
+<script>
+    function c2f() {
+        var cel = document.getElementById("celcius");
+        var far = document.getElementById("fahrenheit");
+        far.value=(cel.value * 1.8)+32;
+        
+        // alert(cel.value + "" + "celsius is equal to " +" " + far.value + "" + "fahrenheit");
+    }
+
+    function c2k() {
+        var cel1 = document.getElementById("cel2kel");
+        var kel = document.getElementById("kelvin");
+        kel.value=cel1.value + 273.15;
+    }
+
+    function f2c() {
+        var far1 = document.getElementById("far2cel");
+        var cel2 = document.getElementById("cel2");
+        cel2.value=(far1.value/1.8)-32;
+    }
+    
+    function f2k() {
+        var far2 = document.getElementById("far2kel");
+        var kel1 = document.getElementById("kel1");
+        kel1.value=(far2.value + 459.67) * 5/9;
+    }
+</script>
+
+</html>
